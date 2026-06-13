@@ -138,17 +138,18 @@ body{
 }
 
 .password-length{
-    margin-bottom : 0px;
+    margin-bottom : 2%;
     color : white;
     font-size : 1.2cqw;
 }
 
 .slider-value{
     color : aqua;
+    font-size : 1.15cqw;
 }
 
 .slider{
-    margin-top : 2%;
+    margin-top : 0px;
     width: 100%;
     height: 8%;
     border-radius: 4px;
@@ -160,21 +161,24 @@ body{
     display : grid;
     grid-template-columns : repeat(2, 1fr);
     width : 60%;
+    height : 100%;
 }
 
 .checkbox-space{
-    width : 100%
+    width : 100%;
+    height : 40%;
 }
 
 .checkbox{
-    width : 22px;
-    height : 22px;
+    width : 6%;
+    height : 100%;
     accent-color : rgb(38, 94, 94);
     background-color : aqua;
     border : 2px solid #00555a;
     border-radius: 6px;
     cursor: pointer;
     vertical-align: middle;
+    
 }
 
 .checkbox-txt {
@@ -187,6 +191,36 @@ body{
 
 .generate-box{
     width : 22%;    
+}
+
+.password-strength-txt{
+    margin-bottom : 1%;
+    margin-top : 0px;
+    color : white;
+    font-size : 1.2cqw;
+}
+
+.password-strength{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    width : 100%;
+    height : 100%;
+    
+}
+
+.strength-bar{
+    width : 44%;
+    height : 35%;
+    border : 1.5px solid rgb(30, 100, 100);
+    border-radius : 0 7px 7px 0;
+    margin-top : 0px;
+}
+
+.strength-meter{
+    background-color : rgba(0, 255, 255, 0.71);
+    width : 20%;
+    height : 100%;
 }
 
 .history-box, .saved-box{
