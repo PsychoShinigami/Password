@@ -78,7 +78,16 @@ function passwordStrength() {
 
     let statusText = "";
     let themeColor = "";
-    if (checkedCount === 0 || totalScore <= 25) {
+    
+    if (checkedCount === 0) {
+        statusText = "You must check one box!";
+        themeColor = "red";
+    }
+    else if (length<5) {
+        statusText = "Password length must be above four!"
+        themeColor = "red";
+    }
+    else if (totalScore <= 25) {
         statusText = "Very Weak";
         themeColor = "red";
     } 
