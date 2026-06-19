@@ -110,3 +110,27 @@ function passwordStrength() {
     strengthTxt.textContent = statusText;
     strengthTxt.style.color = themeColor;
 }
+
+function generatePassword() {
+    const uppercases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowercases = "abcdefghijklmnopqrstuvwxyz";
+    const digits = 1234567890;
+    const specialCharacters = "!#$&_-/.><+=*()"
+}
+
+const generateBtn = document.querySelector('.generate-box');
+generateBtn.addEventListener('click', () => {
+    const checkboxes = document.querySelectorAll('.checkbox');
+    let checkedCount = 0;
+    checkboxes.forEach(box => {
+        if (box.checked) {
+            checkedCount++
+        };
+    });
+    if (checkedCount === 0) {
+        alert("One checkbox must be checked!")
+    }
+    else {
+        generatePassword();
+    }
+})

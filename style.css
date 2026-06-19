@@ -134,7 +134,30 @@ body{
 }
 
 .copy-box{
-    width : 30%;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    width : 21%;
+    height : 55%;
+    margin-left: auto;
+    border : 2px solid aqua;
+    border-radius : 12px;
+    margin-top : 2%;
+    cursor : pointer;
+    box-shadow:
+        0 0 15px rgba(0, 243, 255, 0.4),
+        0 0 5px rgba(0, 243, 255, 0.6),
+        inset 0 0 50px rgba(0, 243, 255, 0.3);
+}
+
+.copy-img{
+    width : 20%;
+    height : 70%;
+}
+
+.copy-txt{
+    font-size : 1.4cqw;
+    color : rgba(28, 180, 180, 0.967);;
 }
 
 .password-length{
@@ -189,9 +212,28 @@ body{
     cursor: pointer;
 }
 
-.generate-box{
-    width : 22%;    
+.generate-box{  
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    width : 15%;
+    height : 55%;
+    margin-left: auto;
+    border : 2px solid aqua;
+    border-radius : 12px;
+    margin-top : 1.6%;
+    cursor : pointer;
+    box-shadow:
+        0 0 15px rgba(0, 243, 255, 0.4),
+        0 0 5px rgba(0, 243, 255, 0.6),
+        inset 0 0 50px rgba(0, 243, 255, 0.3);
 }
+
+.lock-img{
+    width : 25%;
+    height : 60%;
+} 
+
 
 .password-strength-txt{
     margin-bottom : 1%;
