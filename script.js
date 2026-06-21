@@ -143,11 +143,28 @@ function generatePassword() {
             password += specialCharactersList[SPchoice];
         }
     }
-    console.log(password)
+    document.querySelector('.password').innerText = password;
 }
 
 const generateBtn = document.querySelector('.generate-box');
 generateBtn.addEventListener('click', () => {
+    const checkboxes = document.querySelectorAll('.checkbox');
+    let checkedCount = 0;
+    checkboxes.forEach(box => {
+        if (box.checked) {
+            checkedCount++
+        };
+    });
+    if (checkedCount === 0) {
+        alert("One checkbox must be checked!")
+    }
+    else {
+        generatePassword();
+    }
+});
+
+const changeBtn = document.querySelector('.change-box');
+changeBtn.addEventListener('click', () => {
     const checkboxes = document.querySelectorAll('.checkbox');
     let checkedCount = 0;
     checkboxes.forEach(box => {
