@@ -144,6 +144,11 @@ function generatePassword() {
         }
     }
     document.querySelector('.password').innerText = password;
+    const container = document.querySelector('.histories-box');
+    const existingDivs = container.querySelectorAll('.savedPassword');
+    if (existingDivs.length >= 5) {
+        container.firstElementChild.remove(); 
+    }
     const newHistoryDiv = document.createElement('div');
     newHistoryDiv.className = "savedPassword";
     newHistoryDiv.textContent = password; 
@@ -196,10 +201,16 @@ copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(passwordToCopy)
         .then(() => {
             copyTxt.innerText = "Copied!";
+            const container = document.querySelector('.saves-box');
+            const existingDivs = container.querySelectorAll('.savedPassword');
+            if (existingDivs.length >= 5) {
+                container.firstElementChild.remove(); 
+            }
             const newSavedDiv = document.createElement('div');
             newSavedDiv.className = "savedPassword";
             newSavedDiv.textContent = passwordToCopy
             document.querySelector('.saves-box').appendChild(newSavedDiv);
+
             setTimeout(() => {
                 copyTxt.innerText = "Copy Password";
             }, 2000);
