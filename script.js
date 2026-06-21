@@ -144,6 +144,10 @@ function generatePassword() {
         }
     }
     document.querySelector('.password').innerText = password;
+    const newHistoryDiv = document.createElement('div');
+    newHistoryDiv.className = "savedPassword";
+    newHistoryDiv.textContent = password; 
+    document.querySelector('.histories-box').appendChild(newHistoryDiv);
 }
 
 const generateBtn = document.querySelector('.generate-box');
@@ -173,9 +177,35 @@ changeBtn.addEventListener('click', () => {
         };
     });
     if (checkedCount === 0) {
-        alert("One checkbox must be checked!")
+        alert("One checkbox must be checked!");
     }
     else {
         generatePassword();
     }
 })
+
+const copyBtn = document.querySelector('.copy-box');
+const copyTxt = document.querySelector('.copy-txt');
+copyBtn.addEventListener('click', () => {
+    const passwordToCopy = document.querySelector('.password').innerText;
+    if (passwordToCopy === "") {
+        alert("Generate a password first!");
+        return;
+    }   
+
+    navigator.clipboard.writeText(passwordToCopy)
+        .then(() => {
+            copyTxt.innerText = "Copied!";
+            const newSavedDiv = document.createElement('div');
+            newSavedDiv.className = "savedPassword";
+            newSavedDiv.textContent = passwordToCopy
+            document.querySelector('.saves-box').appendChild(newSavedDiv);
+            setTimeout(() => {
+                copyTxt.innerText = "Copy Password";
+            }, 2000);
+        })
+        .catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+});
+

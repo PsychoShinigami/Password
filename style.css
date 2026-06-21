@@ -274,7 +274,7 @@ body{
     display : flex;
     flex-direction : column;
     align-items : center;
-    justify-content : center;
+    justify-content : top;
     width : 100%;
     height : 48%;
     border : 1.5px solid rgb(30, 100, 100);
@@ -282,6 +282,38 @@ body{
 }
 
 .history-txt, .saved-txt{
+    display : flex;
+    justify-content : center;
+    width : 90%;
+    height : 7%;
     font-size : 1.3cqw;
     color : rgb(198, 198, 198);
+}
+
+.histories-box, .saves-box{
+    display : flex;
+    justify-content : top;
+    flex-direction : column;
+    align-items : center;
+    height : 78%;
+    width : 90%;
+}
+
+.savedPassword{
+    display : flex;
+    align-items : center;
+    width : 100%;
+    height : 14%;
+    margin-bottom : 3%;
+    padding : 2%;
+    border : 2px solid aqua;
+    border-radius : 13px;
+    box-shadow:
+        0 0 6px rgba(0, 243, 255, 0.4),
+        0 0 2px rgba(0, 243, 255, 0.6),
+        inset 0 0 20px rgba(0, 243, 255, 0.3);
+    color : rgb(128, 175, 175);
+    font-size : 1.2cqw;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
