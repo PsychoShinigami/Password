@@ -112,10 +112,38 @@ function passwordStrength() {
 }
 
 function generatePassword() {
+    let length = slider.value;
     const uppercases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercases = "abcdefghijklmnopqrstuvwxyz";
-    const digits = 1234567890;
-    const specialCharacters = "!#$&_-/.><+=*()"
+    const digits = "1234567890";
+    const specialCharactersList = "!#$&_-/.><+=*()";
+    const checkboxes = document.querySelectorAll('.checkbox');
+    let checkedCount = 0;
+    checkboxes.forEach(box => {
+        if (box.checked) {
+            checkedCount++
+        };
+    });
+
+    let password = "";
+    for (let i=1; i <= length/checkedCount; i++) {
+        let choice = Math.floor(Math.random()*26);
+        let numChoice = Math.floor(Math.random()*10);
+        let SPchoice = Math.floor(Math.random()*15);
+        if (uppercase.checked) {
+            password += uppercases[choice]
+        }
+        if (lowercase.checked) {
+            password += lowercases[choice];
+        }
+        if (numbers.checked) {
+            password += digits[numChoice];
+        }
+        if (specialCharacters.checked) {
+            password += specialCharactersList[SPchoice];
+        }
+    }
+    console.log(password)
 }
 
 const generateBtn = document.querySelector('.generate-box');
